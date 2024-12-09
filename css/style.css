@@ -76,7 +76,7 @@ body {
   list-style: none;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-  color: #262d57;
+  color: #0d47a1;
 }
 
 body,
@@ -206,7 +206,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background: #405089;
+  background: #0d47a1;
   -webkit-box-shadow: inset 0px 0px 0px 3px #fff;
   -moz-box-shadow: inset 0px 0px 0px 3px #fff;
   box-shadow: inset 0px 0px 0px 3px #fff;
@@ -234,7 +234,7 @@ input[type="radio"]:checked {
 input[type="submit"] {
   height: 54px;
   border: 1px solid #eaebee;
-  color: #405089;
+  color: #0d47a1;
   background: #fff;
   padding: 0 40px;
   font-weight: 600;
@@ -316,7 +316,7 @@ label {
   float: left;
   font-weight: 500;
   padding: 20px 25px;
-  color: #405089;
+  color: #0d47a1;
   font-weight: 600;
 }
 .accordion .card .card-header a:before {
@@ -324,7 +324,7 @@ label {
   float: left;
   text-align: center;
   margin-right: 8px;
-  color: #405089;
+  color: #0d47a1;
   font-weight: 600;
 }
 .accordion .card .card-header a:hover {
@@ -382,7 +382,7 @@ label {
   float: left;
   margin-bottom: 10px;
   font-size: 15px;
-  color: #405089;
+  color: #0d47a1;
 }
 .progress-infos strong {
   font-weight: 600;
@@ -409,7 +409,7 @@ label {
 .pagination .page-item .page-link {
   border: none;
   border-bottom: 2px solid #eaebee;
-  color: #405089;
+  color: #0d47a1;
   border-radius: 0 !important;
   font-size: 12px;
   font-weight: 600;
@@ -486,7 +486,7 @@ label {
   line-height: 30px;
   overflow: hidden;
   position: relative;
-  background: #405089;
+  background: #0d47a1;
   opacity: 0.99;
 }
 .preloader-wrap .loadbar {
@@ -560,7 +560,7 @@ label {
   display: block;
   height: 2px;
   width: 23px;
-  background: #405089;
+  background: #0d47a1;
   opacity: 1;
   position: absolute;
   right: 11px;
@@ -670,7 +670,7 @@ label {
   display: block;
   height: 2px;
   width: 22px;
-  background: #405089;
+  background: #0d47a1;
   opacity: 1;
   position: absolute;
   right: 12px;
@@ -938,7 +938,7 @@ label {
   padding: 0 15px;
   height: 100px;
   line-height: 100px;
-  color: #405089;
+  color: #0d47a1;
   font-weight: 600;
   position: relative;
 }
@@ -1059,7 +1059,7 @@ label {
   order: 3;
   cursor: pointer;
   font-size: 17px;
-  color: #405089;
+  color: #0d47a1;
 }
 .header .navbar .container .search-btn:hover {
   color: #0d47a1;
@@ -1083,7 +1083,7 @@ label {
 }
 .header .navbar .container .language li a {
   float: left;
-  color: #405089;
+  color: #0d47a1;
   font-weight: 600;
 }
 .header .navbar .container .language li a:hover {
@@ -1111,7 +1111,7 @@ label {
   position: relative;
   z-index: 0;
   margin-top: -76px;
-  background: #405089;
+  background: #0d47a1;
 }
 .slider .swiper-slide {
   overflow: hidden;
@@ -1215,7 +1215,7 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #405089;
+  background-color: #0d47a1;
   background-blend-mode: multiply;
   text-align: right;
 }
@@ -1229,7 +1229,7 @@ label {
   margin-top: -76px;
   padding-top: 130px;
   padding-bottom: 50px;
-  background: #405089;
+  background: #0d47a1;
 }
 .page-header .print {
   float: right;
@@ -1381,6 +1381,7 @@ label {
 .featured-services .content-wrapper .container .content-box a img {
   height: 24px;
 }
+
 .featured-services .logos {
   width: 100%;
   display: flex;
@@ -1589,7 +1590,7 @@ label {
   display: block;
   font-weight: 800;
   margin-bottom: 20px;
-  color: #405089;
+  color: #0d47a1;
 }
 .icon-content-box .content-box img {
   height: 100px;
@@ -1618,7 +1619,7 @@ label {
   height: 250px;
   float: left;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-  background: #405089;
+  background: #0d47a1;
   color: #fff;
 }
 .flip-box-back h4 {
@@ -1664,7 +1665,7 @@ label {
   position: relative;
   margin: 0;
   overflow: hidden;
-  background: #405089;
+  background: #0d47a1;
 }
 .image-content-over-box figure * {
   -webkit-transition: 0.25s ease-in-out;
@@ -1730,7 +1731,7 @@ label {
   transform: rotate(180deg);
 }
 .image-content-over-box .swiper-button-prev:hover {
-  background: #405089;
+  background: #0d47a1;
 }
 .image-content-over-box .swiper-button-prev img {
   -webkit-filter: brightness(0) invert(1);
@@ -1743,7 +1744,7 @@ label {
   padding: 10px;
 }
 .image-content-over-box .swiper-button-next:hover {
-  background: #405089;
+  background: #0d47a1;
 }
 .image-content-over-box .swiper-button-next img {
   -webkit-filter: brightness(0) invert(1);
@@ -1810,22 +1811,22 @@ label {
   background-image: -o-linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    #131314 100%
+    #0d47a1 100%
   );
   background-image: -moz-linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    #131314 100%
+    #0d47a1 100%
   );
   background-image: -webkit-linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    #131314 100%
+    #0d47a1 100%
   );
   background-image: -ms-linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    #131314 100%
+    #0d47a1 100%
   );
   position: absolute;
   left: 0;
@@ -1850,7 +1851,7 @@ label {
   line-height: 52px;
   display: inline-block;
   border: 1px solid #eaebee;
-  color: #405089;
+  color: #0d47a1;
   padding: 0 40px;
   font-weight: 600;
   font-size: 13px;
@@ -1883,7 +1884,7 @@ label {
 }
 .showcase-filter li a:hover {
   text-decoration: none;
-  color: #405089;
+  color: #0d47a1;
 }
 .showcase-filter li a.current {
   color: #0d47a1;
@@ -1895,7 +1896,7 @@ label {
   display: flex;
   flex-wrap: wrap;
   padding: 120px 0;
-  background: url(../images/world-map.png) center no-repeat #405089;
+  background: url(../images/world-map.png) center no-repeat #0d47a1;
   text-align: center;
   color: #fff;
   background-size: auto 80%;
@@ -2158,7 +2159,7 @@ label {
   flex-wrap: wrap;
   padding-top: 120px;
   padding-bottom: 180px;
-  background: #405089;
+  background: #0d47a1;
   margin-bottom: -54px;
 }
 .request-form form {
@@ -2236,7 +2237,7 @@ label {
 .solutions .sidebar ul li a {
   float: left;
   font-weight: 600;
-  color: #405089;
+  color: #0d47a1;
 }
 .solutions .sidebar ul li a:hover {
   color: #0d47a1;
@@ -2397,7 +2398,7 @@ label {
 .blog .post .post-content blockquote {
   width: 100%;
   display: block;
-  background: #405089;
+  background: #0d47a1;
   padding: 20px;
   color: #fff;
 }
@@ -2486,7 +2487,7 @@ label {
 }
 .blog .sidebar .categories ul li a {
   float: left;
-  color: #405089;
+  color: #0d47a1;
   font-weight: 600;
 }
 .blog .sidebar .tags ul {
@@ -2512,7 +2513,7 @@ label {
   color: #fff;
 }
 .blog .sidebar .tags ul li a:hover {
-  background: #405089;
+  background: #0d47a1;
   text-decoration: none;
 }
 .blog .sidebar .gallery ul {
@@ -2631,7 +2632,7 @@ label {
   height: 60px;
   line-height: 58px;
   border: 1px solid #eaebee;
-  color: #405089;
+  color: #0d47a1;
   padding: 0 44px;
   font-size: 13px;
   font-weight: 600;
@@ -2727,7 +2728,7 @@ label {
   display: flex;
   flex-wrap: wrap;
   padding: 120px 0;
-  background: #405089;
+  background: #0d47a1;
   color: #fff;
   text-align: center;
 }
@@ -2929,7 +2930,7 @@ label {
   font-size: 12px;
 }
 .career .job-list li span a:hover {
-  background: #405089;
+  background: #0d47a1;
   text-decoration: none;
 }
 .career form {
@@ -2990,7 +2991,7 @@ label {
   right: 7px;
   top: 7px;
   color: #fff;
-  background: #405089;
+  background: #0d47a1;
   font-size: 12px;
   font-weight: 600;
   padding: 0 15px;
@@ -3015,7 +3016,7 @@ label {
   width: 100%;
   float: left;
   margin-bottom: 30px;
-  background: #405089;
+  background: #0d47a1;
 }
 .press-relases figure:hover img {
   opacity: 0.7;
@@ -3073,7 +3074,7 @@ label {
   color: #0d47a1;
 }
 .our-offices address a {
-  color: #405089;
+  color: #0d47a1;
 }
 .our-offices address small a {
   font-weight: 600;
@@ -3161,7 +3162,7 @@ label {
 }
 .contact h6 {
   font-weight: 600;
-  color: #405089;
+  color: #0d47a1;
 }
 .contact a {
   color: #262d57;
@@ -3215,7 +3216,7 @@ label {
   background-color: #0d47a1;
 }
 .scrollup:hover {
-  background-color: #405089;
+  background-color: #0d47a1;
   color: #fff;
 }
 
@@ -3224,7 +3225,7 @@ label {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  background: #262d57;
+  background: #00296b;
   margin-top: 54px;
 }
 .footer .contact-wrapper {
@@ -3271,7 +3272,7 @@ label {
   margin: 0;
 }
 .footer .contact-wrapper .container p a {
-  color: #405089;
+  color: #0d47a1;
   text-decoration: underline;
 }
 .footer .content-wrapper {
