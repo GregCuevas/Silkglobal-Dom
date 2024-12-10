@@ -1604,6 +1604,7 @@ label {
 
 .flip-box .flip-box-back .inner {
   padding: 0 15px;
+  background-color: #0d47a1;
 }
 
 .flip-box-front {
