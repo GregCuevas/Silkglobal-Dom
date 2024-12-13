@@ -939,7 +939,7 @@ label {
   height: 100px;
   line-height: 100px;
   color: #0d47a1;
-  font-weight: 600;
+  font-weight: 400;
   position: relative;
 }
 .header .navbar .container .nav-menu li a:hover {
@@ -2252,6 +2252,28 @@ label {
   background-color: #000; /* Fondo de la flecha */
   background-size: 20px 20px;
 }
+/* Estilos específicos para el elemento activo */
+.solutions .sidebar ul li.active {
+  background-color: #0d47a1; /* Fondo azul oscuro */
+}
+
+.solutions .sidebar ul li.active a {
+  color: #ffffff; /* Texto blanco */
+}
+
+.solutions .sidebar ul li.active::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 59px;
+  height: 59px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23ffffff"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>')
+    no-repeat center center;
+  background-color: #000; /* Fondo de la flecha */
+  background-size: 20px 20px;
+}
 
 .solutions .content-box {
   width: 100%;
@@ -2480,42 +2502,45 @@ label {
 }
 
 /* Estilo de la lista de categorías */
-.blog .sidebar .categories ul {
+/* Estilos generales */
+.widget.categories ul {
   width: 100%;
-  float: left;
   margin: 0;
   padding: 0;
   list-style: none;
   background-color: #ffffff; /* Fondo general */
 }
 
-.blog .sidebar .categories ul li {
+.widget.categories ul li {
   width: 100%;
   line-height: 60px;
   padding: 0 20px;
-  margin-bottom: 3px; /* Espacio entre elementos */
-  background-color: #f7f7f7; /* Fondo blanco individual */
+  margin-bottom: 3px;
+  background-color: #f7f7f7;
   position: relative;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 }
 
-.blog .sidebar .categories ul li a {
+.widget.categories ul li a {
   text-decoration: none;
   font-weight: 600;
-  color: #0d47a1; /* Color azul inicial */
+  color: #0d47a1; /* Color inicial */
   display: block;
 }
 
 /* Hover Effect */
-.blog .sidebar .categories ul li:hover {
-  background-color: #0d47a1;
+.widget.categories ul li:hover,
+.widget.categories ul li.active {
+  background-color: #0d47a1; /* Fondo azul oscuro */
 }
 
-.blog .sidebar .categories ul li:hover a {
+.widget.categories ul li:hover a,
+.widget.categories ul li.active a {
   color: #ffffff; /* Texto en blanco */
 }
 
-.blog .sidebar .categories ul li:hover::after {
+.widget.categories ul li:hover::after,
+.widget.categories ul li.active::after {
   content: "";
   position: absolute;
   right: 1px;
@@ -3263,7 +3288,7 @@ label {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  background: #00296b;
+  background: #fff;
   margin-top: 54px;
 }
 .footer .contact-wrapper {
@@ -3319,7 +3344,7 @@ label {
   margin-bottom: 50px;
 }
 .footer .content-wrapper p {
-  color: #fff;
+  color: #000;
 }
 .footer .content-wrapper .logo {
   height: 41px;
@@ -3338,11 +3363,11 @@ label {
 }
 .footer .content-wrapper .footer-menu li a {
   float: left;
-  color: #fff;
+  color: #000;
 }
 .footer .content-wrapper .contact-box {
   float: right;
-  color: #fff;
+  color: #000;
   text-align: right;
 }
 .footer .content-wrapper .contact-box h5 {
@@ -3358,7 +3383,7 @@ label {
   color: #9aa0ae;
 }
 .footer .content-wrapper .contact-box p a {
-  color: #fff;
+  color: #000;
 }
 .footer .content-wrapper .contact-box ul {
   float: right;
@@ -3374,7 +3399,7 @@ label {
 .footer .content-wrapper .contact-box ul li a {
   float: left;
   font-size: 13px;
-  color: #fff;
+  color: #000;
 }
 .footer .content-wrapper .contact-box ul li a:hover {
   color: #0d47a1;
@@ -3382,7 +3407,7 @@ label {
 .footer .sub-footer {
   width: 100%;
   display: flex;
-  color: #fff;
+  color: #000;
   padding: 30px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -3396,7 +3421,7 @@ label {
 }
 .footer .sub-footer .creation a {
   font-weight: 600;
-  color: #fff;
+  color: #000;
 }
 
 /* RESPONSIVE MEDIUM  FIXES */
