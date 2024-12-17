@@ -259,3 +259,69 @@
     return false;
   });
 })(jQuery);
+
+// FAQ
+
+function toggleFAQ(id) {
+  const answer = document.getElementById(`answer-${id}`);
+  const icon = document.getElementById(`icon-${id}`);
+
+  if (answer.style.display === "block") {
+    answer.style.display = "none";
+    icon.textContent = "+";
+  } else {
+    document.querySelectorAll(".faq-answer").forEach((item) => {
+      item.style.display = "none";
+    });
+    document.querySelectorAll(".toggle-icon").forEach((icon) => {
+      icon.textContent = "+";
+    });
+    answer.style.display = "block";
+    icon.textContent = "×";
+  }
+}
+
+// NEWS
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all pagination buttons
+  const paginationButtons = document.querySelectorAll(".pagination-button");
+
+  // Select the content containers for all pages
+  const page1Content = document.querySelector(".col-12.page-1");
+  const page2Content = document.querySelector(".col-12.page-2");
+  const page3Content = document.querySelector(".col-12.page-3");
+
+  // Add click event listeners to each pagination button
+  paginationButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Remove active class from all buttons
+      paginationButtons.forEach((btn) => btn.classList.remove("active"));
+
+      // Add active class to the clicked button
+      this.classList.add("active");
+
+      // Get the page number from the button's data attribute
+      const pageNumber = this.getAttribute("data-page");
+
+      // Hide all pages
+      page1Content.style.display = "none";
+      page2Content.style.display = "none";
+      page3Content.style.display = "none";
+
+      // Show the selected page
+      if (pageNumber === "1") {
+        page1Content.style.display = "flex";
+      } else if (pageNumber === "2") {
+        page2Content.style.display = "flex";
+      } else if (pageNumber === "3") {
+        page3Content.style.display = "flex";
+      }
+
+      // Reinitialize WOW animations for newly visible content
+      // This assumes you're using the WOW library for animations
+      if (typeof WOW !== "undefined") {
+        new WOW().init();
+      }
+    });
+  });
+});
