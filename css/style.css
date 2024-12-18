@@ -4362,3 +4362,372 @@ label {
   color: white;
   border-color: #0d47a1;
 }
+
+/* section valores */
+.company-info {
+  position: relative;
+  padding: 60px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
+  overflow: hidden;
+}
+
+.wave-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='1440' height='320' viewBox='0 0 1440 320' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1440 32L1380 64C1320 96 1200 160 1080 176C960 192 840 160 720 144C600 128 480 128 360 144C240 160 120 192 60 208L0 224V0H60C120 0 240 0 360 0C480 0 600 0 720 0C840 0 960 0 1080 0C1200 0 1320 0 1380 0H1440V32Z' fill='%23F0F4FF' fill-opacity='0.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.icon-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #f0f4ff;
+  border-radius: 50%;
+  color: #0d47a1;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  background-color: #e3eaff;
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.15);
+}
+
+.info-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.info-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.info-column h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.info-column h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: #0d47a1;
+}
+
+.info-column p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .company-info {
+    padding: 40px 0;
+  }
+
+  .icon-container {
+    width: 70px;
+    height: 70px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .info-columns {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .content-wrapper {
+    padding: 24px;
+    margin: 0 12px;
+    max-width: 500px;
+    width: calc(100% - 24px);
+    margin: 0 auto;
+  }
+
+  .info-column h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .info-column p {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 100%;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-info {
+    padding: 32px 0;
+  }
+
+  .icon-header {
+    padding: 15px;
+  }
+
+  .icon-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .content-wrapper {
+    padding: 20px;
+  }
+
+  .info-column h2 {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .info-column p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* Section Styles */
+.investment-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.section-header {
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.section-header .subtitle {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0d47a1;
+  margin-bottom: 16px;
+}
+
+.section-header .title {
+  color: #1a1a1a;
+  font-family: "Playfair Display", serif;
+}
+
+/* News Grid Styles */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Card Styles */
+.news-card {
+  background: #fff;
+
+  overflow: hidden;
+
+  height: 100%;
+}
+
+.card-image {
+  position: relative;
+  padding-top: 125%; /* 4:5 Aspect Ratio */
+  overflow: hidden;
+}
+
+.card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 24px;
+  background: #fff;
+}
+
+.source {
+  display: inline-block;
+  color: #ff4d4d;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-content .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.date {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .section-header .title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .investment-section {
+    padding: 60px 0;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .section-header .title {
+    font-size: 32px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .investment-section {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-header .subtitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .section-header .title {
+    font-size: 28px;
+  }
+
+  .card-content {
+    padding: 16px;
+  }
+
+  .source {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .card-content .title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+}
