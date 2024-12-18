@@ -106,6 +106,7 @@
         $("#3").html("52");
         $("#4").html("1");
         $("#5").html("18");
+        $("#6").html("1");
 
         lastWasLower = true;
       } else {

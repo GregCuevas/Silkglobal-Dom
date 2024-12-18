@@ -519,12 +519,12 @@ label {
   display: block;
   font-weight: 700;
   font-family: "Playfair Display", serif;
-  color: #fff;
+  color: #0d47a1;
   margin-bottom: 20px;
 }
 .section-title h6 {
   font-size: 19px;
-  color: #fff;
+  color: #9aa0ae;
   line-height: 30px;
   margin-bottom: 0;
 }
@@ -539,6 +539,50 @@ label {
   opacity: 0.7;
 }
 .section-title.light h6 {
+  color: #fff;
+}
+
+/* SECTION-TITLES V2 */
+
+.section-titles {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.section-titles span {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+}
+.section-titles h2 {
+  display: block;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.section-titles h6 {
+  font-size: 19px;
+  color: #fff;
+  line-height: 30px;
+  margin-bottom: 0;
+}
+.section-titles.light {
+  color: #fff;
+}
+.section-titles.light h2 {
+  color: #fff;
+}
+.section-titles.light span {
+  color: #fff;
+  opacity: 0.7;
+}
+.section-title.light h6 {
+  color: #fff;
+}
+.numeross {
   color: #fff;
 }
 
@@ -1639,12 +1683,11 @@ label {
   display: flex;
   flex-wrap: wrap;
   padding: 120px 0;
-  background: #0d47a1;
+  background: #eaebee;
   overflow: hidden;
 }
-.numero {
-  color: #fff;
-  opacity: 0.7;
+.numeros {
+  color: #0d47a1;
 }
 .image-content-over-box .section-title {
   position: relative;
@@ -1658,7 +1701,7 @@ label {
   content: "";
   width: 100%;
   height: 100%;
-  background: #0d47a1;
+  background: #eaebee;
   position: absolute;
   left: -100%;
   top: 0;
