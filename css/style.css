@@ -4364,14 +4364,14 @@ label {
 }
 
 /* section valores */
-.company-info {
+.v4-company-overview {
   position: relative;
   padding: 60px 0;
   background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
   overflow: hidden;
 }
 
-.wave-bg {
+.v4-wave-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -4385,7 +4385,7 @@ label {
   pointer-events: none;
 }
 
-.container {
+.v4-content-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -4393,14 +4393,14 @@ label {
   z-index: 1;
 }
 
-.icon-header {
+.v4-icon-row {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 40px;
 }
 
-.icon-container {
+.v4-icon-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4408,7 +4408,7 @@ label {
   height: 80px;
 }
 
-.icon {
+.v4-icon-circle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4420,25 +4420,25 @@ label {
   transition: all 0.3s ease;
 }
 
-.icon:hover {
+.v4-icon-circle:hover {
   transform: scale(1.1);
   background-color: #e3eaff;
   box-shadow: 0 4px 12px rgba(13, 71, 161, 0.15);
 }
 
-.info-columns {
+.v4-info-grid {
   display: flex;
   gap: 40px;
   justify-content: space-between;
 }
 
-.info-column {
+.v4-info-column {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.content-wrapper {
+.v4-content-box {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   padding: 30px;
@@ -4449,17 +4449,16 @@ label {
   text-align: center;
 }
 
-.info-column h2 {
+.v4-info-column h2 {
   font-size: 24px;
   font-weight: 600;
   color: #333;
   margin-bottom: 20px;
-  text-transform: lowercase;
   position: relative;
   padding-bottom: 12px;
 }
 
-.info-column h2::after {
+.v4-info-column h2::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -4470,7 +4469,7 @@ label {
   background: #0d47a1;
 }
 
-.info-column p {
+.v4-info-column p {
   font-size: 16px;
   line-height: 1.8;
   color: #555;
@@ -4479,31 +4478,31 @@ label {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .company-info {
+  .v4-company-overview {
     padding: 40px 0;
   }
 
-  .icon-container {
+  .v4-icon-wrapper {
     width: 70px;
     height: 70px;
   }
 
-  .icon {
+  .v4-icon-circle {
     width: 50px;
     height: 50px;
   }
 
-  .icon svg {
+  .v4-icon-circle svg {
     width: 30px;
     height: 30px;
   }
 
-  .info-columns {
+  .v4-info-grid {
     flex-direction: column;
     gap: 24px;
   }
 
-  .content-wrapper {
+  .v4-content-box {
     padding: 24px;
     margin: 0 12px;
     max-width: 500px;
@@ -4511,12 +4510,12 @@ label {
     margin: 0 auto;
   }
 
-  .info-column h2 {
+  .v4-info-column h2 {
     font-size: 22px;
     margin-bottom: 16px;
   }
 
-  .info-column p {
+  .v4-info-column p {
     font-size: 15px;
     line-height: 1.7;
     max-width: 100%;
@@ -4525,44 +4524,44 @@ label {
 }
 
 @media (max-width: 480px) {
-  .company-info {
+  .v4-company-overview {
     padding: 32px 0;
   }
 
-  .icon-header {
+  .v4-icon-row {
     padding: 15px;
   }
 
-  .icon-container {
+  .v4-icon-wrapper {
     width: 60px;
     height: 60px;
   }
 
-  .icon {
+  .v4-icon-circle {
     width: 45px;
     height: 45px;
   }
 
-  .icon svg {
+  .v4-icon-circle svg {
     width: 25px;
     height: 25px;
   }
 
-  .content-wrapper {
+  .v4-content-box {
     padding: 20px;
   }
 
-  .info-column h2 {
+  .v4-info-column h2 {
     font-size: 20px;
     margin-bottom: 14px;
   }
 
-  .info-column p {
+  .v4-info-column p {
     font-size: 14px;
     line-height: 1.6;
   }
 
-  .container {
+  .v4-content-container {
     padding: 0 12px;
   }
 }
