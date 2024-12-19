@@ -4437,7 +4437,7 @@ label {
   box-shadow: 0 4px 12px rgba(13, 71, 161, 0.15);
 }
 
-.v4-info-grid {
+.v4-info-grids {
   display: flex;
   gap: 40px;
   justify-content: space-between;
@@ -4590,12 +4590,12 @@ label {
 }
 
 /* Header Styles */
-.section-header {
+.section-headers {
   text-align: left;
   margin-bottom: 50px;
 }
 
-.section-header .subtitle {
+.section-headers .subtitles {
   display: block;
   font-size: 16px;
   font-weight: 500;
@@ -4603,7 +4603,7 @@ label {
   margin-bottom: 16px;
 }
 
-.section-header .title {
+.section-headers .titles {
   color: #1a1a1a;
   font-family: "Playfair Display", serif;
 }
