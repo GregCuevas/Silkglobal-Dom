@@ -3169,37 +3169,112 @@ label {
 /* OUR OFFICES */
 .our-offices {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
   padding: 120px 0;
-}
-.our-offices .col-12 {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-.our-offices address {
-  flex-basis: calc(33.33333% - 1px);
   background: #fff;
-  margin-right: 1px;
-  margin-bottom: 1px;
-  padding: 60px 40px;
+}
+
+.our-offices .col-12 {
+  width: 100%;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1px;
+  background: #fff;
+  min-width: 100%;
+}
+
+.our-offices address {
   background: #eaebee;
+  padding: 60px 40px;
+  margin: 0;
 }
-.our-offices address:nth-child(3n + 3) {
-  margin-right: 0;
-}
+
 .our-offices address h5 {
   font-weight: 700;
   font-family: "Playfair Display", serif;
   color: #0d47a1;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
 }
+
+.our-offices address p {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
 .our-offices address a {
   color: #0d47a1;
+  text-decoration: none;
 }
+
 .our-offices address small a {
   font-weight: 600;
   text-decoration: underline;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 0;
+}
+
+.carousel-button.next {
+  right: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .carousel-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .our-offices {
+    padding: 60px 0;
+  }
+
+  .our-offices address {
+    padding: 40px 20px;
+  }
+
+  .carousel-container {
+    padding: 0 20px;
+  }
 }
 
 /* ERROR PAGE 404*/

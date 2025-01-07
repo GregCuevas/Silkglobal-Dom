@@ -326,3 +326,66 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Revendedores
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".carousel-content");
+  const prevButton = document.querySelector(".carousel-button.prev");
+  const nextButton = document.querySelector(".carousel-button.next");
+  const items = document.querySelectorAll(".carousel-grid address");
+
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+  let currentPage = 0;
+
+  function updateCarousel() {
+    const offset = -currentPage * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+
+    // Actualizar visibilidad de los botones
+    prevButton.style.visibility = currentPage === 0 ? "hidden" : "visible";
+    nextButton.style.visibility =
+      currentPage === totalPages - 1 ? "hidden" : "visible";
+  }
+
+  function moveNext() {
+    if (currentPage < totalPages - 1) {
+      currentPage++;
+      updateCarousel();
+    }
+  }
+
+  function movePrev() {
+    if (currentPage > 0) {
+      currentPage--;
+      updateCarousel();
+    }
+  }
+
+  // Event Listeners para los botones
+  nextButton.addEventListener("click", moveNext);
+  prevButton.addEventListener("click", movePrev);
+
+  // Soporte para gestos táctiles en dispositivos móviles
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  carousel.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  carousel.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) {
+      moveNext();
+    } else if (touchEndX - touchStartX > 50) {
+      movePrev();
+    }
+  });
+
+  // Inicializar el carrusel
+  updateCarousel();
+
+  // Actualizar el carrusel cuando se redimensiona la ventana
+  window.addEventListener("resize", updateCarousel);
+});
