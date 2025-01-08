@@ -432,6 +432,7 @@
          </div>
          <!-- end row inner -->
           <form class="row" id="contact" name="contact" method="post">
+            
             <div class="form-group col-sm-6 col-12">
               <label>Nombre</label>
                <input type="text" name="name" id="name" placeholder="Carlos Ramírez" required>
@@ -452,7 +453,18 @@
               <label> Número de teléfono</label>
               <input type="text" name="subject" id="subject" placeholder="(809) 123-4567" required>
             </div>
-            
+
+            <div class="form-group col-sm-12 col-12">
+              <label class="form-label">Con cuál producto está relacionada tu consulta?</label>
+              <select class="form-select" name="product" id="product" required>
+                <option value="" disabled selected>Selecciona</option>
+                <option value="silkglobal">Silkglobal</option>
+                <option value="unared">UnaRed</option>
+                <option value="mitelecom">MiTelecom</option>
+                <option value="coopeducate">Coopebred</option>
+              </select>
+            </div>
+
             <!-- end form-group -->
             <div class="form-group col-12">
               <label> Cómo podemos ayudarte?</label>
