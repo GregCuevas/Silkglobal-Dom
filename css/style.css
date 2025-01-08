@@ -5702,3 +5702,108 @@ label {
     padding: 0 12px;
   }
 }
+
+/* SECTION ACUERDOS */
+.agreements-section {
+  background-color: #0d47a1;
+  color: #ffffff;
+  padding: 4rem 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.agreements-header {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.agreements-subtitle {
+  color: #fff;
+  font-size: 0.875rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.agreements-title {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+
+  font-family: "Playfair Display", serif;
+}
+
+.agreements-description {
+  color: #9ca3af;
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 1rem 0;
+}
+
+.agreements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.agreement-card {
+  background-color: #0b3d91;
+  overflow: hidden;
+}
+
+.agreement-image-container {
+  position: relative;
+  padding-top: 66.67%; /* 3:2 aspect ratio */
+  overflow: hidden;
+}
+
+.agreement-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.agreement-card-title {
+  font-size: 1.25rem;
+  margin: 1.5rem 1.5rem 0.5rem;
+  font-weight: 500;
+}
+
+.agreement-card-text {
+  color: #9ca3af;
+
+  margin: 0 1.5rem 1.5rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .agreements-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .agreements-title {
+    font-size: 2rem;
+  }
+
+  .agreements-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .agreements-section {
+    padding: 2rem 1rem;
+  }
+
+  .agreements-title {
+    font-size: 1.75rem;
+  }
+
+  .agreement-card-title {
+    font-size: 1.125rem;
+  }
+}
