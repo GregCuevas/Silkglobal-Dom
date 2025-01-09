@@ -3173,41 +3173,53 @@ label {
   background: #fff;
 }
 
-.our-offices .col-12 {
-  width: 100%;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.carousel-container {
-  position: relative;
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h1 {
+  font-size: 2.5rem;
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
+.section-title .rev {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.grid-container {
   width: 100%;
   padding: 0 40px;
 }
 
-.carousel-wrapper {
-  overflow: hidden;
-}
-
-.carousel-content {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-grid {
+.company-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 1px;
-  background: #fff;
-  min-width: 100%;
+  margin-bottom: 30px;
 }
 
-.our-offices address {
+.company-card {
   background: #eaebee;
-  padding: 60px 40px;
+  padding: 40px 30px;
   margin: 0;
+  transition: background-color 0.3s ease;
 }
 
-.our-offices address h5 {
+.company-card:hover {
+  background: #e0e2e8;
+}
+
+.company-card h5 {
   font-weight: 700;
   font-family: "Playfair Display", serif;
   color: #0d47a1;
@@ -3215,20 +3227,94 @@ label {
   font-size: 1.25rem;
 }
 
-.our-offices address p {
+.company-card p {
   color: #666;
   margin-bottom: 15px;
   line-height: 1.5;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
-.our-offices address a {
+.province-button {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 12px 24px;
+  background: #0d47a1;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.province-button:hover {
+  background: #0a3679;
+}
+
+.province-list {
+  display: none;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.province-list button {
+  margin: 5px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #0d47a1;
   color: #0d47a1;
-  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.our-offices address small a {
-  font-weight: 600;
-  text-decoration: underline;
+.province-list button:hover {
+  background: #0d47a1;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #0d47a1;
+  color: #0d47a1;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  background: #0d47a1;
+  color: white;
+}
+
+.pagination button.active {
+  background: #0d47a1;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .company-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title h1 {
+    font-size: 2rem;
+  }
 }
 
 .carousel-button {

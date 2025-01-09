@@ -329,63 +329,152 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Revendedores
 document.addEventListener("DOMContentLoaded", function () {
-  const carousel = document.querySelector(".carousel-content");
-  const prevButton = document.querySelector(".carousel-button.prev");
-  const nextButton = document.querySelector(".carousel-button.next");
-  const items = document.querySelectorAll(".carousel-grid address");
+  const companies = [
+    { name: "MESHLINK, S.R.L.", location: "SANTO DOMINGO | LOS GUARICANOS" },
+    { name: "INTERNATIONAL COMMUNICATIONS", location: "VILLA ALTAGRACIA" },
+    { name: "BLUE GEM TECHNOLOGY", location: "SANTIAGO" },
+    { name: "PIRAX", location: "SAN VICTOR | MOCA" },
+    { name: "UNBITEL", location: "JARABACOA" },
+    { name: "NEXT TELECOM", location: "DAJABON | MONTECRISTI" },
+    { name: "XPLOIT TECHNOLOGY", location: "EL LLANO | SAN PEDRO DE MACORÍS" },
+    { name: "KONEX TELECOM", location: "SANTIAGO" },
+    { name: "WIFI DOMINICANA", location: "SANTIAGO" },
+    { name: "TELEPOP NETWORK, S.R.L.", location: "PUERTO PLATA" },
+    { name: "SERVIMAST JPM SRL", location: "SANTIAGO" },
+    { name: "LINARES TECHNOLOGY S.R.L.", location: "CONSTANZA" },
+    { name: "HELLOFIBRA SERVICES PENA, S.R.L.", location: "AZUA" },
+    { name: "TECNOLOGIA COMPOSTELA", location: "AZUA" },
+    { name: "PENIEL WIFI S.R.L.", location: "SANTIAGO" },
+    { name: "INVERSIONES SOINPRO, S.R.L.,", location: "SANTIAGO" },
+    { name: "FREFELIX S.R.L.", location: "SANTIAGO" },
+    { name: "SEQURE NETWORK", location: "SANTIAGO" },
+    { name: "WALDO MAURICIO", location: "SANTIAGO" },
+    { name: "EOS TELECOM", location: "SANTIAGO" },
+    { name: "TELCOFIBRA", location: "BARAHONA" },
+    { name: "ACOLME TECH/DCNA", location: "MONTEPLATA" },
+    { name: "CASTILLO FM", location: "CASTILLO | DUARTE" },
+    { name: "GENIOS", location: "SANTO DOMINGO | LOS GUARICANOS" },
+    { name: "MASTER TECHNOLOGI", location: "SAN PEDRO" },
+    { name: "ALCOM S.R.L.", location: "AZUA" },
+    { name: "ALMER COMUNICACIONES", location: "VERON | LA ALTAGRACIA" },
+    { name: "ALCOMTECH ALMANZAR", location: "LOS ALCARRIZOS" },
+    { name: "ESCALON TECHNOLOGY", location: "PUNTA CANA" },
+    { name: "EDJ TELECOMUNICACIONES", location: "PUNTA CANA" },
+    { name: "PERSIL", location: "LOS ALCARRIZOS" },
+  ];
 
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(items.length / itemsPerPage);
-  let currentPage = 0;
+  const companyGrid = document.getElementById("companyGrid");
+  const provinceButton = document.getElementById("provinceButton");
+  const provinceList = document.getElementById("provinceList");
+  const pagination = document.getElementById("pagination");
 
-  function updateCarousel() {
-    const offset = -currentPage * 100;
-    carousel.style.transform = `translateX(${offset}%)`;
+  const ITEMS_PER_PAGE = 12;
+  let currentPage = 1;
+  let currentCompanies = [...companies];
 
-    // Actualizar visibilidad de los botones
-    prevButton.style.visibility = currentPage === 0 ? "hidden" : "visible";
-    nextButton.style.visibility =
-      currentPage === totalPages - 1 ? "hidden" : "visible";
+  function formatCompanyName(name) {
+    return name
+      .split(" ")
+      .map((word) => {
+        if (word === "S.R.L." || word === "SRL") return word;
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      })
+      .join(" ");
   }
 
-  function moveNext() {
-    if (currentPage < totalPages - 1) {
-      currentPage++;
-      updateCarousel();
+  function createCompanyCard(company, showLocation = false) {
+    const card = document.createElement("div");
+    card.className = "company-card";
+    card.innerHTML = `
+      <h5>${formatCompanyName(company.name)}</h5>
+      ${showLocation ? `<p>${company.location}</p>` : ""}
+    `;
+    return card;
+  }
+
+  function displayCompanies(companiesArray, showLocation = false, page = 1) {
+    companyGrid.innerHTML = "";
+    currentCompanies = companiesArray;
+    currentPage = page;
+
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const paginatedCompanies = companiesArray.slice(start, end);
+
+    paginatedCompanies.forEach((company) => {
+      companyGrid.appendChild(createCompanyCard(company, showLocation));
+    });
+
+    updatePagination(companiesArray.length);
+  }
+
+  function updatePagination(totalItems) {
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+    pagination.innerHTML = "";
+
+    if (totalPages <= 1) {
+      pagination.style.display = "none";
+      return;
+    }
+
+    pagination.style.display = "flex";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement("button");
+      button.textContent = i;
+      button.classList.toggle("active", i === currentPage);
+      button.addEventListener("click", () => {
+        displayCompanies(currentCompanies, currentPage !== 1, i);
+      });
+      pagination.appendChild(button);
     }
   }
 
-  function movePrev() {
-    if (currentPage > 0) {
-      currentPage--;
-      updateCarousel();
-    }
+  function setupProvinceList() {
+    const provinces = [
+      ...new Set(companies.map((company) => company.location)),
+    ].sort();
+    provinceList.innerHTML = "";
+
+    const allButton = document.createElement("button");
+    allButton.textContent = "Todos";
+    allButton.addEventListener("click", () => {
+      displayCompanies(companies, false, 1);
+      provinceList.style.display = "none";
+    });
+    provinceList.appendChild(allButton);
+
+    provinces.forEach((province) => {
+      const button = document.createElement("button");
+      button.textContent = province;
+      button.addEventListener("click", () => {
+        const filteredCompanies = companies.filter(
+          (company) => company.location === province
+        );
+        displayCompanies(filteredCompanies, true, 1);
+        provinceList.style.display = "none";
+      });
+      provinceList.appendChild(button);
+    });
   }
 
-  // Event Listeners para los botones
-  nextButton.addEventListener("click", moveNext);
-  prevButton.addEventListener("click", movePrev);
-
-  // Soporte para gestos táctiles en dispositivos móviles
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  carousel.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX;
+  provinceButton.addEventListener("click", () => {
+    provinceList.style.display =
+      provinceList.style.display === "none" || !provinceList.style.display
+        ? "block"
+        : "none";
   });
 
-  carousel.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    if (touchStartX - touchEndX > 50) {
-      moveNext();
-    } else if (touchEndX - touchStartX > 50) {
-      movePrev();
+  document.addEventListener("click", (e) => {
+    if (
+      !provinceButton.contains(e.target) &&
+      !provinceList.contains(e.target)
+    ) {
+      provinceList.style.display = "none";
     }
   });
 
-  // Inicializar el carrusel
-  updateCarousel();
-
-  // Actualizar el carrusel cuando se redimensiona la ventana
-  window.addEventListener("resize", updateCarousel);
+  // Inicialización
+  setupProvinceList();
+  displayCompanies(companies, false, 1);
 });
