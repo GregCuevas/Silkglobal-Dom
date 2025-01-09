@@ -366,7 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const companyGrid = document.getElementById("companyGrid");
   const provinceButton = document.getElementById("provinceButton");
   const provinceList = document.getElementById("provinceList");
-  const pagination = document.getElementById("pagination");
+  const pagination = document.getElementById("paginations");
 
   const ITEMS_PER_PAGE = 12;
   let currentPage = 1;

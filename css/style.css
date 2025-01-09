@@ -3275,14 +3275,14 @@ label {
   color: white;
 }
 
-.pagination {
+.paginations {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 30px;
 }
 
-.pagination button {
+.paginations button {
   padding: 8px 16px;
   background: white;
   border: 1px solid #0d47a1;
@@ -3292,12 +3292,12 @@ label {
   transition: all 0.3s ease;
 }
 
-.pagination button:hover {
+.paginations button:hover {
   background: #0d47a1;
   color: white;
 }
 
-.pagination button.active {
+.paginations button.active {
   background: #0d47a1;
   color: white;
 }
