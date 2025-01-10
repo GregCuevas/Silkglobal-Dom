@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: "BLUE GEM TECHNOLOGY", location: "Santiago" },
     { name: "PIRAX", location: "Espaillat" },
     { name: "UNBITEL", location: "La Vega" },
-    { name: "NEXT TELECOM", location: "Dajabón/Monte Cristi" },
+    { name: "NEXT TELECOM", location: "Dabajón/Monte Cristi" },
     { name: "XPLOIT TECHNOLOGY", location: "Elías Piña" },
     { name: "KONEX TELECOM", location: "Santiago" },
     { name: "WIFI DOMINICANA", location: "Santiago" },
