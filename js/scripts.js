@@ -330,33 +330,33 @@ document.addEventListener("DOMContentLoaded", function () {
 // Revendedores
 document.addEventListener("DOMContentLoaded", function () {
   const companies = [
-    { name: "MESHLINK, S.R.L.", location: "SANTO DOMINGO | LOS GUARICANOS" },
+    { name: "MESHLINK, S.R.L.", location: "GUARICANO" },
     { name: "INTERNATIONAL COMMUNICATIONS", location: "VILLA ALTAGRACIA" },
     { name: "BLUE GEM TECHNOLOGY", location: "SANTIAGO" },
-    { name: "PIRAX", location: "SAN VICTOR | MOCA" },
+    { name: "PIRAX", location: "SAN VICTOR / MOCA" },
     { name: "UNBITEL", location: "JARABACOA" },
-    { name: "NEXT TELECOM", location: "DAJABON | MONTECRISTI" },
-    { name: "XPLOIT TECHNOLOGY", location: "EL LLANO | SAN PEDRO DE MACORÍS" },
+    { name: "NEXT TELECOM", location: "DAJABON/MONTECRISTI" },
+    { name: "XPLOIT TECHNOLOGY", location: "EL LLANO" },
     { name: "KONEX TELECOM", location: "SANTIAGO" },
     { name: "WIFI DOMINICANA", location: "SANTIAGO" },
     { name: "TELEPOP NETWORK, S.R.L.", location: "PUERTO PLATA" },
+    { name: "INVERSIONES SOINPRO, S.R.L.,", location: "SANTIAGO" },
     { name: "SERVIMAST JPM SRL", location: "SANTIAGO" },
-    { name: "LINARES TECHNOLOGY S.R.L.", location: "CONSTANZA" },
+    { name: "LINARES TECHNOLOGY SRL", location: "CONSTANZA" },
     { name: "HELLOFIBRA SERVICES PENA, S.R.L.", location: "AZUA" },
     { name: "TECNOLOGIA COMPOSTELA", location: "AZUA" },
-    { name: "PENIEL WIFI S.R.L.", location: "SANTIAGO" },
-    { name: "INVERSIONES SOINPRO, S.R.L.,", location: "SANTIAGO" },
-    { name: "FREFELIX S.R.L.", location: "SANTIAGO" },
+    { name: "PENIEL WIFI SRL", location: "SANTIAGO" },
+    { name: "FREFELIX SRL", location: "SANTIAGO" },
     { name: "SEQURE NETWORK", location: "SANTIAGO" },
     { name: "WALDO MAURICIO", location: "SANTIAGO" },
     { name: "EOS TELECOM", location: "SANTIAGO" },
-    { name: "TELCOFIBRA", location: "BARAHONA" },
+    { name: "TELCOFIBRA", location: "PARAHONA" },
     { name: "ACOLME TECH/DCNA", location: "MONTEPLATA" },
-    { name: "CASTILLO FM", location: "CASTILLO | DUARTE" },
-    { name: "GENIOS", location: "SANTO DOMINGO | LOS GUARICANOS" },
+    { name: "CASTILLO FM", location: "CASTILLO" },
+    { name: "GENIOS", location: "LOS GUARICANOS" },
     { name: "MASTER TECHNOLOGI", location: "SAN PEDRO" },
-    { name: "ALCOM S.R.L.", location: "AZUA" },
-    { name: "ALMER COMUNICACIONES", location: "VERON | LA ALTAGRACIA" },
+    { name: "ALCOM SRL", location: "AZUA" },
+    { name: "ALMER COMUNICACIONES", location: "VERON" },
     { name: "ALCOMTECH ALMANZAR", location: "LOS ALCARRIZOS" },
     { name: "ESCALON TECHNOLOGY", location: "PUNTA CANA" },
     { name: "EDJ TELECOMUNICACIONES", location: "PUNTA CANA" },
@@ -364,8 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const companyGrid = document.getElementById("companyGrid");
-  const provinceButton = document.getElementById("provinceButton");
-  const provinceList = document.getElementById("provinceList");
+  const provinceSelect = document.getElementById("provinceSelect");
   const pagination = document.getElementById("paginations");
 
   const ITEMS_PER_PAGE = 12;
@@ -430,51 +429,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function setupProvinceList() {
-    const provinces = [
-      ...new Set(companies.map((company) => company.location)),
-    ].sort();
-    provinceList.innerHTML = "";
-
-    const allButton = document.createElement("button");
-    allButton.textContent = "Todos";
-    allButton.addEventListener("click", () => {
+  // Event Listener para el select
+  provinceSelect.addEventListener("change", function () {
+    const selectedValue = this.value;
+    if (selectedValue === "all") {
       displayCompanies(companies, false, 1);
-      provinceList.style.display = "none";
-    });
-    provinceList.appendChild(allButton);
-
-    provinces.forEach((province) => {
-      const button = document.createElement("button");
-      button.textContent = province;
-      button.addEventListener("click", () => {
-        const filteredCompanies = companies.filter(
-          (company) => company.location === province
-        );
-        displayCompanies(filteredCompanies, true, 1);
-        provinceList.style.display = "none";
-      });
-      provinceList.appendChild(button);
-    });
-  }
-
-  provinceButton.addEventListener("click", () => {
-    provinceList.style.display =
-      provinceList.style.display === "none" || !provinceList.style.display
-        ? "block"
-        : "none";
-  });
-
-  document.addEventListener("click", (e) => {
-    if (
-      !provinceButton.contains(e.target) &&
-      !provinceList.contains(e.target)
-    ) {
-      provinceList.style.display = "none";
+    } else {
+      const filteredCompanies = companies.filter(
+        (company) => company.location === selectedValue
+      );
+      displayCompanies(filteredCompanies, true, 1);
     }
   });
 
   // Inicialización
-  setupProvinceList();
   displayCompanies(companies, false, 1);
 });
