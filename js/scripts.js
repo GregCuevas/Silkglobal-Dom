@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: "KONEX TELECOM", location: "Santiago" },
     { name: "WIFI DOMINICANA", location: "Santiago" },
     { name: "TELEPOP NETWORK, S.R.L.", location: "Puerto Plata" },
-    { name: "INVERSIONES SOINPRO, S.R.L.,", location: "Santiago" },
+    { name: "INVERSIONES SOINPRO, S.R.L.", location: "Santiago" },
     { name: "SERVIMAST JPM SRL", location: "Santiago" },
     { name: "LINARES TECHNOLOGY SRL", location: "La Vega" },
     { name: "HELLOFIBRA SERVICES PENA, S.R.L.", location: "Santiago" },
