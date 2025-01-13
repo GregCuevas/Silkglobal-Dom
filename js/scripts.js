@@ -330,37 +330,254 @@ document.addEventListener("DOMContentLoaded", function () {
 // Revendedores
 document.addEventListener("DOMContentLoaded", function () {
   const companies = [
-    { name: "MESHLINK, S.R.L.", location: "Santo Domingo" },
-    { name: "INTERNATIONAL COMMUNICATIONS", location: "San Cristóbal" },
-    { name: "BLUE GEM TECHNOLOGY", location: "Santiago" },
-    { name: "PIRAX", location: "Espaillat" },
-    { name: "UNBITEL", location: "La Vega" },
-    { name: "NEXT TELECOM", location: "Dabajón/Monte Cristi" },
-    { name: "XPLOIT TECHNOLOGY", location: "Elías Piña" },
-    { name: "KONEX TELECOM", location: "Santiago" },
-    { name: "WIFI DOMINICANA", location: "Santiago" },
-    { name: "TELEPOP NETWORK, S.R.L.", location: "Puerto Plata" },
-    { name: "INVERSIONES SOINPRO, S.R.L.", location: "Santiago" },
-    { name: "SERVIMAST JPM SRL", location: "Santiago" },
-    { name: "LINARES TECHNOLOGY SRL", location: "La Vega" },
-    { name: "HELLOFIBRA SERVICES PENA, S.R.L.", location: "Santiago" },
-    { name: "TECNOLOGIA COMPOSTELA", location: "Azua" },
-    { name: "PENIEL WIFI SRL", location: "Santiago" },
-    { name: "FREFELIX SRL", location: "Santiago" },
-    { name: "SEQURE NETWORK", location: "Santiago" },
-    { name: "WALDO MAURICIO", location: "Santiago" },
-    { name: "EOS TELECOM", location: "Santiago" },
-    { name: "TELCOFIBRA", location: "Barahona" },
-    { name: "ACOLME TECH/DCNA", location: "Monte Plata" },
-    { name: "CASTILLO FM", location: "Duarte" },
-    { name: "GENIOS", location: "Santo Domingo" },
-    { name: "MASTER TECHNOLOGI", location: "San Pedro De Macorís" },
-    { name: "ALCOM SRL", location: "Azua" },
-    { name: "ALMER COMUNICACIONES", location: "La Altagracia" },
-    { name: "ALCONTECH ALMANZAR", location: "Santo Domingo" },
-    { name: "ESCALON TECHNOLOGY", location: "La Altagracia" },
-    { name: "EDJ TELECOMUNICACIONES", location: "La Altagracia" },
-    { name: "PERSIL", location: "Santo Domingo" },
+    {
+      name: "MESHLINK, S.R.L.",
+      location: "Santo Domingo",
+      address: "Sector San Felipe",
+      city: "Villa Mella",
+      phone: "849-406-4939",
+      email: "meshlinksrl@gmail.com",
+    },
+    {
+      name: "INTERNATIONAL COMMUNICATIONS",
+      location: "San Cristóbal",
+      address: "La Cuchilla",
+      city: "Villa Altagracia",
+      phone: "809-618-0003",
+      email: "carlossuero29@gmail.com",
+    },
+    {
+      name: "BLUE GEM TECHNOLOGY",
+      location: "Santiago",
+      address: "Carretera Luperón",
+      city: "Gurabo",
+      phone: "849-248-2139",
+      email: "raul03g@gmail.com",
+    },
+    {
+      name: "PIRAX",
+      location: "Espaillat",
+      address: "Calle profesor juan bosh",
+      city: "San Víctor",
+      phone: "809-340-4819",
+      email: "rvelzquez@gmail.com",
+    },
+    {
+      name: "UNBITEL",
+      location: "La Vega",
+      address: "Residencial Fernandez",
+      city: "Jarabacoa",
+      phone: "809-610-1015",
+      email: "ndiaz@unbitel.com.do",
+    },
+    {
+      name: "NEXT TELECOM",
+      location: "Dabajón",
+      address: "Calle Presidente Henríquez",
+      city: "Centro de la Ciudad",
+      phone: "809-579-7345",
+      email: "rtavarez@aztecatelecom.do",
+    },
+    {
+      name: "XPLOIT TECHNOLOGY",
+      location: "Santo Domingo",
+      address: "Calle Cyrazao, Esquina 23",
+      city: "Plaza Gloria Virginia",
+      phone: "809-838-1161",
+      email: "vasquez08@outlook.com",
+    },
+    {
+      name: "KONEX TELECOM",
+      location: "Santiago",
+      address: "Calle Cuba No. 60",
+      city: "CENTRO DE LA CIUDAD",
+      phone: "809-865-8881",
+      email: "bianto.nunez@gmail.com",
+    },
+    {
+      name: "WIFI DOMINICANA",
+      location: "Santiago",
+      address: "5050 Wireless Way",
+      city: "Santiago, DR 51000",
+      phone: "+1 809 555 9753",
+      email: "support@wifidominicana.com",
+    },
+    {
+      name: "TELEPOP NETWORK, S.R.L.",
+      location: "Puerto Plata",
+      address: "Calle Primera, No.1",
+      city: "Sector El Javillar",
+      phone: "809-970-3191",
+      email: "telepopnetwork.s.r.l@gmail.com",
+    },
+    {
+      name: "INVERSIONES SOINPRO, S.R.L.",
+      location: "La Vega",
+      address: "Calle Los González No. 36-B",
+      city: "El Caimito Adentro",
+      phone: "809-224-1005",
+      email: "ingvictordiaz02@gmail.com",
+    },
+    {
+      name: "SERVIMAST JPM SRL",
+      location: "Santiago",
+      address: "8080 Service Road",
+      city: "Santiago",
+      phone: "809-555-9512",
+      email: "pedronegocio169@gmail.com",
+    },
+    {
+      name: "LINARES TECHNOLOGY SRL",
+      location: "La Vega",
+      address: "9090 Tech Park",
+      city: "La Vega",
+      phone: "809-555-7890",
+      email: "linarestechnology@gmail.com",
+    },
+    {
+      name: "HELLOFIBRA SERVICES PENA, S.R.L.",
+      location: "Santiago",
+      address: "1111 Fiber Optic Lane",
+      city: "Santiago",
+      phone: "809-555-4567",
+      email: "Hellofibrard@gmail.com",
+    },
+    {
+      name: "TECNOLOGIA COMPOSTELA",
+      location: "Azua",
+      address: "2222 Innovation Drive",
+      city: "Azua",
+      phone: "809-924-3726",
+      email: "Latataagramonte@hotmail.com",
+    },
+    {
+      name: "PENIEL WIFI SRL",
+      location: "Santiago",
+      address: "Calle 27 No. 12",
+      city: "RESIDENCIAL LOS PRADOS",
+      phone: "809-456-6147",
+      email: "cheo29_5@hotmail.com",
+    },
+    {
+      name: "FREFELIX SRL",
+      location: "Santiago",
+      address: "Calle 20 No. 24",
+      city: "Reparto",
+      phone: "809-510-9682",
+      email: "felixnoel_3@hotmail.com",
+    },
+    {
+      name: "SEQURE NETWORK",
+      location: "Santiago",
+      address: "5555 Security Avenue",
+      city: "Santiago",
+      phone: "809-555-7412",
+      email: "sequrenetwork@gmail.com",
+    },
+    {
+      name: "WALDO MAURICIO",
+      location: "Santiago",
+      address: "6666 Tech Solutions Street",
+      city: "Santiago, DR 51000",
+      phone: "+1 809 555 8523",
+      email: "info@waldomauricio.com",
+    },
+    {
+      name: "EOS TELECOM",
+      location: "Santiago",
+      address: "7777 Communication Road",
+      city: "Santiago, DR 51000",
+      phone: "+1 809 555 9634",
+      email: "richard@eos.com.do",
+    },
+    {
+      name: "TELCOFIBER",
+      location: "Santiago",
+      address: "Paradise II, Edificio 9, Apto.13",
+      city: "Las Palomas",
+      phone: "849-406-4939",
+      email: "telcofiber@outlook.com",
+    },
+    {
+      name: "ACOLME TECH/DCNA",
+      location: "Santo Domingo",
+      address: "Calle Mella No. 27",
+      city: "El Bonito",
+      phone: "929-705-7099",
+      email: "acolmetech@gmail.com",
+    },
+    {
+      name: "CASTILLO FM",
+      location: "Duarte",
+      address: "CALLE FRANK GRULLON NO.06",
+      city: "SALIDA DE NAGUA",
+      phone: "809-244-8989",
+      email: "lenin@globalinternetrd.com",
+    },
+    {
+      name: "GENIOS",
+      location: "Santo Domingo",
+      address: "Calle Fray Antón de Montesinos",
+      city: "Nueva Isabela Guaricano",
+      phone: "809-309-4321",
+      email: "franciscopayampsfpg@gmail.com",
+    },
+    {
+      name: "MASTER TECHNOLOGI",
+      location: "San Pedro De Macorís",
+      address: "Calle E, No. 04",
+      city: "Sector de Quisqueya",
+      phone: "809-350-7790",
+      email: "domingo_s@live.com",
+    },
+    {
+      name: "ALCOM SRL",
+      location: "Azua",
+      address: "Calle 30 de mayo, No.46",
+      city: "Sector Finca",
+      phone: "809-882-1717",
+      email: "Josealejo2@hotmail.com",
+    },
+    {
+      name: "ALMER COMUNICACIONES",
+      location: "La Altagracia",
+      address: "Carretera Verón",
+      city: "Sector Punta Cana",
+      phone: "829-415-3330",
+      email: "jirehpcs@gmail.com",
+    },
+    {
+      name: "ALCONTECH ALMANZAR",
+      location: "La Vega",
+      address: "Autopista Duarte Km 14",
+      city: "Moca",
+      phone: "809-276-0831",
+      email: "alcontech@hotmail.com",
+    },
+    {
+      name: "ESCALON TECHNOLOGY",
+      location: "La Altagracia",
+      address: "AV. ITALIA PLAZA FLAMBOYAN #2",
+      city: "HIGUEY",
+      phone: "809-285-4273",
+      email: "escalontechnology@gmail.com",
+    },
+    {
+      name: "EDJ COMUNICACIONES",
+      location: "La Altagracia",
+      address: "AV. ESTADOS UNIDOS, EDIFICIO PRIMAVERAL #10",
+      city: "BAVARO",
+      phone: "809-350-5888",
+      email: "EDWINDELACRUZ602@GMAIL.COM",
+    },
+    {
+      name: "PERSIL SERVICIOS MÚLTIPLES",
+      location: "Santo Domingo",
+      address: "Calle 16, No. 12",
+      city: "PUEBLO NUEVO",
+      phone: "829-986-4850",
+      email: "Frank_silfa@hotmail.com",
+    },
   ];
 
   const companyGrid = document.getElementById("companyGrid");
@@ -381,17 +598,20 @@ document.addEventListener("DOMContentLoaded", function () {
       .join(" ");
   }
 
-  function createCompanyCard(company, showLocation = false) {
+  function createCompanyCard(company) {
     const card = document.createElement("div");
     card.className = "company-card";
     card.innerHTML = `
       <h5>${formatCompanyName(company.name)}</h5>
-      ${showLocation ? `<p>${company.location}</p>` : ""}
+      <p>${company.address}</p>
+      <p>${company.city}</p>
+      <p>${company.phone}</p>
+      <p><a href="mailto:${company.email}">${company.email}</a></p>
     `;
     return card;
   }
 
-  function displayCompanies(companiesArray, showLocation = false, page = 1) {
+  function displayCompanies(companiesArray, page = 1) {
     companyGrid.innerHTML = "";
     currentCompanies = companiesArray;
     currentPage = page;
@@ -401,7 +621,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const paginatedCompanies = companiesArray.slice(start, end);
 
     paginatedCompanies.forEach((company) => {
-      companyGrid.appendChild(createCompanyCard(company, showLocation));
+      companyGrid.appendChild(createCompanyCard(company));
     });
 
     updatePagination(companiesArray.length);
@@ -423,7 +643,7 @@ document.addEventListener("DOMContentLoaded", function () {
       button.textContent = i;
       button.classList.toggle("active", i === currentPage);
       button.addEventListener("click", () => {
-        displayCompanies(currentCompanies, currentPage !== 1, i);
+        displayCompanies(currentCompanies, i);
       });
       pagination.appendChild(button);
     }
@@ -433,15 +653,15 @@ document.addEventListener("DOMContentLoaded", function () {
   provinceSelect.addEventListener("change", function () {
     const selectedValue = this.value;
     if (selectedValue === "all") {
-      displayCompanies(companies, false, 1);
+      displayCompanies(companies, 1);
     } else {
       const filteredCompanies = companies.filter(
         (company) => company.location === selectedValue
       );
-      displayCompanies(filteredCompanies, true, 1);
+      displayCompanies(filteredCompanies, 1);
     }
   });
 
   // Inicialización
-  displayCompanies(companies, false, 1);
+  displayCompanies(companies, 1);
 });
