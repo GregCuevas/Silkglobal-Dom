@@ -665,3 +665,109 @@ document.addEventListener("DOMContentLoaded", function () {
   // Inicialización
   displayCompanies(companies, 1);
 });
+
+// SUCURSALES
+
+document.addEventListener("DOMContentLoaded", function () {
+  const companies = [
+    {
+      name: "Santo Domingo",
+      location: "Santo Domingo",
+      address: "Edificio Lama, Av. Winston Churchill ",
+      phone: "829-470-5896",
+      email: "info@silkglobal.com",
+    },
+    {
+      name: "Las Terrenas",
+      location: "Las Terrenas",
+      address: "C/ Juan Pablo Duarte, Plaza Piantini Local A-2",
+      phone: "829-470-6922",
+      email: "info@silkglobal.com",
+    },
+  ];
+
+  const companyGrid = document.getElementById("companyGrid");
+  const provinceSelect = document.getElementById("provinceSelects");
+  const pagination = document.getElementById("paginations");
+
+  const ITEMS_PER_PAGE = 12;
+  let currentPage = 1;
+  let currentCompanies = [...companies];
+
+  function formatCompanyName(name) {
+    return name
+      .split(" ")
+      .map((word) => {
+        if (word === "S.R.L." || word === "SRL") return word;
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      })
+      .join(" ");
+  }
+
+  function createCompanyCard(company) {
+    const card = document.createElement("div");
+    card.className = "company-card";
+    card.innerHTML = `
+      <h5>${formatCompanyName(company.name)}</h5>
+      <p>${company.address}</p>
+      
+      <p>${company.phone}</p>
+      <p><a href="mailto:${company.email}">${company.email}</a></p>
+    `;
+    return card;
+  }
+
+  function displayCompanies(companiesArray, page = 1) {
+    companyGrid.innerHTML = "";
+    currentCompanies = companiesArray;
+    currentPage = page;
+
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const paginatedCompanies = companiesArray.slice(start, end);
+
+    paginatedCompanies.forEach((company) => {
+      companyGrid.appendChild(createCompanyCard(company));
+    });
+
+    updatePagination(companiesArray.length);
+  }
+
+  function updatePagination(totalItems) {
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+    pagination.innerHTML = "";
+
+    if (totalPages <= 1) {
+      pagination.style.display = "none";
+      return;
+    }
+
+    pagination.style.display = "flex";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement("button");
+      button.textContent = i;
+      button.classList.toggle("active", i === currentPage);
+      button.addEventListener("click", () => {
+        displayCompanies(currentCompanies, i);
+      });
+      pagination.appendChild(button);
+    }
+  }
+
+  // Event Listener para el select
+  provinceSelect.addEventListener("change", function () {
+    const selectedValue = this.value;
+    if (selectedValue === "all") {
+      displayCompanies(companies, 1);
+    } else {
+      const filteredCompanies = companies.filter(
+        (company) => company.location === selectedValue
+      );
+      displayCompanies(filteredCompanies, 1);
+    }
+  });
+
+  // Inicialización
+  displayCompanies(companies, 1);
+});
