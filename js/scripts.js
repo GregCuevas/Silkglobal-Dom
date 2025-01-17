@@ -771,3 +771,193 @@ document.addEventListener("DOMContentLoaded", function () {
   // Inicialización
   displayCompanies(companies, 1);
 });
+
+// DISTRIBUIDORES
+
+document.addEventListener("DOMContentLoaded", function () {
+  const companies = [
+    {
+      name: "Wisphas",
+      location: "Santo Domingo",
+      address: "Santo Domingo Este ",
+      phone: "829-689-2708",
+      email: "ileguizamon27@gmail.com",
+    },
+    {
+      name: "Metro Network SRL",
+      location: "Santo Domingo",
+      address: "Santo Domingo Norte",
+      phone: "829-396-2169",
+      email: "metronetworks.rd@gmail.com",
+    },
+    {
+      name: "Hannel Celedonio",
+      location: "Santo Domingo",
+      address: "Santo Domingo Este",
+      phone: "829-924-7710",
+      email: "janelcm01@gmail.com",
+    },
+    {
+      name: "Swat TECHNOLOGY",
+      location: "La Altagracia",
+      address: "Bávaro",
+      phone: "829-648-9751",
+      email: "codiosnegros@gmail.com",
+    },
+    {
+      name: "Ranred Dominicana",
+      location: "Puerto Plata",
+      address: "Altamira",
+      phone: "829-723-1498",
+      email: "domingo_s@live.com",
+    },
+    {
+      name: "Speedwy SRL",
+      location: "Valverde",
+      address: "Sibila Mao",
+      phone: "829-642-5981",
+      email: "speedwitelecom@gmail.com",
+    },
+    {
+      name: "TECHNOWILL",
+      location: "San José de Ocoa",
+      address: "San José de Ocoa",
+      phone: "809-710-0377",
+      email: "cristhian53cristhian@gmail.con",
+    },
+    {
+      name: "Thiago Travel Multiservice",
+      location: "San Juan",
+      address: "San Juan",
+      phone: "829-305-7319",
+      email: "Cesarjbaez@gmail.com",
+    },
+    {
+      name: "ARTEL DOMINICANA SRL",
+      location: "Distrito Nacional",
+      address: "LA CIENAGA",
+      phone: "809-799-0404",
+      email: "REITORCONSULTING@GMAIL.COM",
+    },
+    {
+      name: "Jef Red Technology",
+      location: "Santo Domingo",
+      address: "Los Alcarrizos",
+      phone: "829-353-2222",
+      email: "ramonvicente2882@outlook.com",
+    },
+    {
+      name: "JAVE Network",
+      location: "Monte Cristi",
+      address: "VILLA VASQUEZ",
+      phone: "",
+      email: "javewireless@hotmail.es",
+    },
+    {
+      name: "SomosNet Technology",
+      location: "San Pedro de Macorís",
+      address: "VILLA VELAZQUEZ",
+      phone: "829-526-3972",
+      email: "somosnet2205@gmail.com",
+    },
+    {
+      name: "Servicio Nuñez",
+      location: "",
+      address: "",
+      phone: "",
+      email: "info@servicios-nunez.com",
+    },
+    {
+      name: "Eriamtech",
+      location: "La Vega",
+      address: "MICHES",
+      phone: "829-470-6922",
+      email: "wilsonmessina@gmail.com",
+    },
+  ];
+
+  const companyGrid = document.getElementById("companyGrid");
+  const provinceSelect = document.getElementById("provinceSelectd");
+  const pagination = document.getElementById("paginations");
+
+  const ITEMS_PER_PAGE = 12;
+  let currentPage = 1;
+  let currentCompanies = [...companies];
+
+  function formatCompanyName(name) {
+    return name
+      .split(" ")
+      .map((word) => {
+        if (word === "S.R.L." || word === "SRL") return word;
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      })
+      .join(" ");
+  }
+
+  function createCompanyCard(company) {
+    const card = document.createElement("div");
+    card.className = "company-card";
+    card.innerHTML = `
+      <h5>${formatCompanyName(company.name)}</h5>
+      <p>${company.address}</p>
+      
+      <p>${company.phone}</p>
+      <p><a href="mailto:${company.email}">${company.email}</a></p>
+    `;
+    return card;
+  }
+
+  function displayCompanies(companiesArray, page = 1) {
+    companyGrid.innerHTML = "";
+    currentCompanies = companiesArray;
+    currentPage = page;
+
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const paginatedCompanies = companiesArray.slice(start, end);
+
+    paginatedCompanies.forEach((company) => {
+      companyGrid.appendChild(createCompanyCard(company));
+    });
+
+    updatePagination(companiesArray.length);
+  }
+
+  function updatePagination(totalItems) {
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+    pagination.innerHTML = "";
+
+    if (totalPages <= 1) {
+      pagination.style.display = "none";
+      return;
+    }
+
+    pagination.style.display = "flex";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement("button");
+      button.textContent = i;
+      button.classList.toggle("active", i === currentPage);
+      button.addEventListener("click", () => {
+        displayCompanies(currentCompanies, i);
+      });
+      pagination.appendChild(button);
+    }
+  }
+
+  // Event Listener para el select
+  provinceSelect.addEventListener("change", function () {
+    const selectedValue = this.value;
+    if (selectedValue === "all") {
+      displayCompanies(companies, 1);
+    } else {
+      const filteredCompanies = companies.filter(
+        (company) => company.location === selectedValue
+      );
+      displayCompanies(filteredCompanies, 1);
+    }
+  });
+
+  // Inicialización
+  displayCompanies(companies, 1);
+});
