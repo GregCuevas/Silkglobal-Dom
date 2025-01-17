@@ -13,7 +13,7 @@
     $fields{"subject"} = "Subject";
     $fields{"message"} = "Message";
 
-    $body = "Here is the message from yourwebsite:\n\n"; foreach($fields as $a => $b){   $body .= sprintf("%20s: %s\n",$b,$_REQUEST[$a]); }
+    $body = "Aqui esta el mensaje de tu web:\n\n"; foreach($fields as $a => $b){   $body .= sprintf("%20s: %s\n",$b,$_REQUEST[$a]); }
 
     $send = mail($to, $subject, $body, $headers);
 
